@@ -1,6 +1,6 @@
 # ToDo
 
-A basic to-do web application developed using Angular framework. The application makes use of a dummy JSON placeholder database.
+📝 A basic to-do web application developed using Angular framework. The application makes use of a dummy JSON placeholder database.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
 
