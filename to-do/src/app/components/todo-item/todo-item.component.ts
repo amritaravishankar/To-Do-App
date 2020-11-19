@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Todo } from 'src/app/models/Todo';
 import { TodoService } from '../../services/todo.service'
 
@@ -10,6 +10,7 @@ import { TodoService } from '../../services/todo.service'
 export class TodoItemComponent implements OnInit {
 
   @Input() todo: Todo;
+  @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter();
 
   constructor(private todoService: TodoService) { }
 
@@ -37,9 +38,11 @@ export class TodoItemComponent implements OnInit {
       );
   }
 
+  // Emit upwards towards parent
   onDelete(todo)
   {
-    console.log("On delete")
+    this.deleteTodo.emit(todo);
+    console.log("delete")
   }
 
 }
